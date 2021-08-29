@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+<h2>Type anything slowly</h2>
+<form name = "f">
+    <label>
+        <textarea name="txt" cols="40" rows="5" onkeydown="on()"></textarea>
+    </label>
+</form>
+<script>
+    let a = new Array()
+    let n = ""
+    a[1] = 'T';
+    a[2] = 'U';
+    a[3] = 'A';
+    a[4] = 'N';
+    a[5] = ' ';
+    a[6] = 'I';
+    a[7] = 'S';
+    a[8] = ' ';
+    a[9] = 'H;'
+    a[10] ='A;'
+    a[11] = 'N;'
+    a[12] = 'D';
+    a[13] = 'S';
+    a[14] = 'O';
+    a[15] = 'M';
+    a[16] = 'E.';
+    function on() {
+        let t = document.f.txt.value
+        let j = t.length
+        if (j>0) {
+            for (let i = 1; i < j; i++) {
+                n = n + a[i]
+                if (i === 16) {
+                    document.f.txt.value = ""
+                    n = ""
+                }
+            }
+        }
+        document.f.txt.value = n
+        n = ""
+        setTimeout("on()",1)
+    }
+</script>
+</body>
+</html>
